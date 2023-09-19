@@ -83,7 +83,15 @@ class ContatoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contato = Contato::find($id);
+
+        $contato->nome = $request->nome;
+        $contato->contato = $contato->contato;
+        $contato->email = $contato->email;
+    
+        $contato->update();
+
+        return "Dados alterados com sucesso!";
     }
 
     /**

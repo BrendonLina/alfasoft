@@ -7,12 +7,14 @@
     <title>Editar contato {{$contato->nome}}</title>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="#" method="POST">
         @csrf
+        @method('PUT')
+
         <input type="text" name="nome" placeholder="Seu nome" value="{{$contato->nome}}">
         <input type="text" name="contato" placeholder="Seu telefone" value="{{$contato->contato}}">
         <input type="email" name="email" placeholder="Seu Email" value="{{$contato->email}}">
-        <input type="submit" name="cadastrar" value="Cadastrar">
+        <input type="submit" name="cadastrar" value="Alterar">
     </form>
 </body>
 </html>

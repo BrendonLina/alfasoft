@@ -27,6 +27,6 @@ Route::get('/contatos/create', [ContatoController::class, 'create']);
 Route::post('/contatos', [ContatoController::class, 'store']);
 Route::get('/contatos/{id}', [ContatoController::class, 'show']);
 Route::get('/contatos/{id}/edit', [ContatoController::class, 'edit']);
-Route::put('/contatos/{id}/edit', [ContatoController::class, 'edit']);
-Route::put('/contatos/{id}', [ContatoController::class, 'update']);
+Route::put('/contatos/{id}/edit', [ContatoController::class, 'update']);
+// Route::put('/contatos/{id}', [ContatoController::class, 'update']);
 Route::delete('/contatos/{id}', [ContatoController::class, 'destroy']);
