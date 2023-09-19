@@ -67,7 +67,11 @@ class ContatoController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(!$contato = Contato::find($id)){
+            return redirect()->view('index');
+        }
+
+        return view('edit', compact('contato'));
     }
 
     /**
