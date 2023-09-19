@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContatoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', 'ContatoController@index');
+// Route::get('/contatos/create', 'ContatoController@create');
+// Route::post('/contatos', 'ContatoController@store');
+// Route::get('/contatos/{contato}', 'ContatoController@show');
+// Route::get('/contatos/{contato}/edit', 'ContatoController@edit');
+// Route::put('/contatos/{contato}', 'ContatoController@update');
+// Route::delete('/contatos/{contato}', 'ContatoController@destroy');
+
+Route::get('/', [ContatoController::class, 'index']);
+Route::get('/contatos/create', [ContatoController::class, 'create']);
+Route::post('/contatos', [ContatoController::class, 'store']);
+Route::get('/contatos/{contato}', [ContatoController::class, 'show']);
+Route::get('/contatos/{contato}/edit', [ContatoController::class, 'edit']);
+Route::put('/contatos/{contato}', [ContatoController::class, 'update']);
+Route::delete('/contatos/{contato}', [ContatoController::class, 'destroy']);
